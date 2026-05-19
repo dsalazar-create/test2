@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMMC Program Analysis & GTM Enablement Strategy</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts (Noto Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+    }
+    /* Page Break styling for PDF generation */
+    @media print {
+      body {
+        background: white !important;
+        color: #111827 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .shadow-card {
+        box-shadow: none !important;
+        border: 1px solid #e5e7eb !important;
+      }
+      .paper-container {
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen py-8 px-4 sm:px-6 lg:px-8">
+
+  <!-- Interactive Top Control Bar (Hidden on Print) -->
+  <div class="max-w-4xl mx-auto mb-6 bg-slate-900 text-white rounded-2xl p-4 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4 no-print">
+    <div class="flex items-center gap-3">
+      <div class="bg-blue-600 p-2 rounded-xl">
+        <!-- SVG Shield Icon -->
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+        </svg>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold">Interactive PDF Preview Layout</h4>
+        <p class="text-[11px] text-slate-400">Perfect for internal reviews, editing, or direct PDF generation.</p>
+      </div>
+    </div>
+    <div class="flex gap-2">
+      <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow-lg shadow-blue-500/25 flex items-center gap-1.5">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+        </svg>
+        Save / Export to PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- A4 Document Page Container -->
+  <article class="max-w-4xl mx-auto bg-white rounded-2xl shadow-2xl border border-slate-200 p-8 sm:p-12 md:p-16 paper-container text-slate-900 leading-relaxed text-[14px]">
+    
+    <!-- Title / Header Block -->
+    <header class="border-b-2 border-slate-200 pb-8 mb-8 text-center sm:text-left relative">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-widest block mb-1">SecurityMetrics, Inc. | Executive Action Report</span>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            CMMC Program Analysis <br class="hidden sm:inline">& GTM Enablement Strategy
+          </h1>
+        </div>
+        <!-- Simple modern SVG Badge -->
+        <div class="bg-blue-50 border border-blue-200 text-blue-700 text-xs px-4 py-2 rounded-xl font-bold flex items-center gap-1.5 shrink-0">
+          <span class="w-2 h-2 rounded-full bg-blue-600 animate-ping"></span>
+          CONFIDENTIAL
+        </div>
+      </div>
+      
+      <div class="mt-6 pt-6 border-t border-slate-100 flex flex-wrap justify-between text-xs text-slate-500">
+        <div><strong>Prepared by:</strong> Sales Operations & Program Strategy Team</div>
+        <div><strong>Date of Analysis:</strong> May 2026</div>
+      </div>
+    </header>
+
+    <!-- SECTION 1 -->
+    <section class="space-y-4 mb-10">
+      <div class="flex items-center gap-2 pb-1 border-b-2 border-blue-900">
+        <h2 class="text-xl font-extrabold text-blue-900 tracking-tight uppercase">1. Executive Summary & Market Opportunity</h2>
+      </div>
+      <p>
+        The Cybersecurity Maturity Model Certification (CMMC) represents a mandatory, non-negotiable paradigm shift in U.S. Department of Defense (DoD) procurement. By replacing trust-based self-attestation with audited security, CMMC mirrors the Payment Card Industry (PCI DSS) compliance ecosystem in which SecurityMetrics maintains a market-leading pedigree. 
+      </p>
+      <p>
+        SecurityMetrics is uniquely positioned to capture the massive scale-up market of Small and Medium-Sized Businesses (SMBs) within the Defense Industrial Base (DIB). By deploying automated self-assessment portals, templated System Security Plans (SSPs), and leveraging our 24/7 technical support, we can scale services and bypass the high-cost, high-friction consulting model typically favored by enterprise competitors.
+      </p>
+
+      <h3 class="text-base font-bold text-slate-800 pt-2">Market Sizing & Program Scope</h3>
+      <p class="text-xs text-slate-600">
+        The defense industrial ecosystem requires rapid categorization and scoping to address the incoming pipeline. The target addressable market (TAM) is structured across two primary implementation levels:
+      </p>
+
+      <!-- TAM Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-3 font-bold border border-slate-800 rounded-tl-lg">Metric / Layer</th>
+              <th class="p-3 font-bold border border-slate-800">Value & Target</th>
+              <th class="p-3 font-bold border border-slate-800 rounded-tr-lg">Strategic Significance for SecurityMetrics</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-slate-50">
+              <td class="p-3 font-bold border border-slate-200">Level 1 TAM</td>
+              <td class="p-3 border border-slate-200 font-semibold text-blue-700">140,000 Contractors</td>
+              <td class="p-3 border border-slate-200 text-slate-600">Annual self-assessments. Represents a SaaS-oriented, high-volume recurring revenue portal play.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold border border-slate-200">Level 2 TAM</td>
+              <td class="p-3 border border-slate-200 font-semibold text-blue-700">80,000 Contractors</td>
+              <td class="p-3 border border-slate-200 text-slate-600">Handles Controlled Unclassified Information (CUI). High-value consulting, Gap Assessments, and partner audits.</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="p-3 font-bold border border-slate-200">Market Potential</td>
+              <td class="p-3 border border-slate-200 font-semibold text-emerald-700">$3.39 Billion</td>
+              <td class="p-3 border border-slate-200 text-slate-600">Aggregated compliance services, software provisioning, and third-party audit readiness.</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold border border-slate-200">Implementation Moat</td>
+              <td class="p-3 border border-slate-200 font-semibold text-amber-700">~60 C3PAOs</td>
+              <td class="p-3 border border-slate-200 text-slate-600">Major industry bottleneck of accredited assessors makes ready-to-audit preparation consulting a critical necessity.</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="p-3 font-bold border border-slate-200">Hard Deadline</td>
+              <td class="p-3 border border-slate-200 font-semibold text-red-700">November 2026</td>
+              <td class="p-3 border border-slate-200 text-slate-600">Phase 2 implementation kicks off strict third-party audit requirements across standard defense solicitations.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="space-y-4 mb-10 page-break">
+      <div class="flex items-center gap-2 pb-1 border-b-2 border-blue-900">
+        <h2 class="text-xl font-extrabold text-blue-900 tracking-tight uppercase">2. The SecurityMetrics Cost & Scoping Moat</h2>
+      </div>
+      <p>
+        Legacy compliance consultants treat CMMC as a bespoke, boutique project, pricing out thousands of small subcontractors. Our model relies on a templated, tool-driven methodology combined with pre-packaged product tiers. This reduces typical timelines from 18 months to under a week for prepared organizations.
+      </p>
+
+      <!-- Competitor Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-3 font-bold border border-slate-800 rounded-tl-lg">Service Tier</th>
+              <th class="p-3 font-bold border border-slate-800">SecurityMetrics Rate</th>
+              <th class="p-3 font-bold border border-slate-800 rounded-tr-lg">Standard Competitor Range / Delivery Model</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-slate-50">
+              <td class="p-3 font-bold border border-slate-200">Level 1 Portal Plus</td>
+              <td class="p-3 border border-slate-200 font-bold text-blue-600">$1,999 / year</td>
+              <td class="p-3 border border-slate-200 text-slate-600">$5,000+ / year (Often gating support behind high-priced hourly rates).</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold border border-slate-200">Level 2 Consulting Base</td>
+              <td class="p-3 border border-slate-200 font-bold text-blue-600">$8,000 – $12,000</td>
+              <td class="p-3 border border-slate-200 text-slate-600">$50,000 – $75,000 (Pure manual consulting hours, no standard software portal).</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="p-3 font-bold border border-slate-200">C3PAO Full-Service Audit</td>
+              <td class="p-3 border border-slate-200 font-bold text-blue-600">$31,000 (Est.)</td>
+              <td class="p-3 border border-slate-200 text-slate-600">$100,000+ (Extremely slow manual assessment processes).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="space-y-4 mb-10">
+      <div class="flex items-center gap-2 pb-1 border-b-2 border-blue-900">
+        <h2 class="text-xl font-extrabold text-blue-900 tracking-tight uppercase">3. Friction & Operational Gaps Matrix</h2>
+      </div>
+      <p>
+        Analysis of live sales-floor interactions has identified several critical operational friction points. Addressing these gaps is paramount to increasing pipeline conversion rates and protecting brand equity.
+      </p>
+
+      <!-- Gaps / Callouts Container -->
+      <div class="space-y-4 pt-2">
+        <!-- Gap 1 -->
+        <div class="p-4 bg-slate-50 border-l-4 border-amber-500 rounded-r-xl shadow-card">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Gap 1</span>
+            <h4 class="font-bold text-slate-900 text-sm">Requirement & Scope Confusion</h4>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            <strong>Issue & Evidence:</strong> Prospects are highly confused on whether CMMC applies to them, which level they actually need, and the difference between FCI and CUI data.
+          </p>
+          <div class="bg-white border border-slate-200 rounded-lg p-3 text-xs italic text-slate-500 mb-2 relative">
+            "I don't even know what CMMC means to tell you the truth. So it's like I'm not even probably remotely along this path."
+          </div>
+          <p class="text-xs text-emerald-800">
+            <strong>Mitigation Strategy:</strong> Deploy simple, 1-page visual flowcharts (FCI → Level 1; CUI → Level 2) for sales representatives to reference within the first 3 minutes of a call.
+          </p>
+        </div>
+
+        <!-- Gap 2 -->
+        <div class="p-4 bg-slate-50 border-l-4 border-amber-500 rounded-r-xl shadow-card">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Gap 2</span>
+            <h4 class="font-bold text-slate-900 text-sm">Timing & Deferral Objections</h4>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            <strong>Issue & Evidence:</strong> Prospects frequently defer action, claiming they are "too busy right now" or prefer to wait until the final deadline.
+          </p>
+          <div class="bg-white border border-slate-200 rounded-lg p-3 text-xs italic text-slate-500 mb-2">
+            "I am like, so not ready to do that right now... I have a crazy busy schedule for the next two weeks."
+          </div>
+          <p class="text-xs text-emerald-800">
+            <strong>Mitigation Strategy:</strong> Train agents on the "Cost of Delay" pitch, illustrating that building an audit-ready SSP takes 3–9 months, making procrastination a major operational risk to contract retention.
+          </p>
+        </div>
+
+        <!-- Gap 3 -->
+        <div class="p-4 bg-slate-50 border-l-4 border-red-500 rounded-r-xl shadow-card page-break">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="bg-red-100 text-red-800 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Gap 3</span>
+            <h4 class="font-bold text-slate-900 text-sm">Overly Aggressive Sales Demeanor</h4>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed mb-3">
+            <strong>Issue & Evidence:</strong> Some sales agents push so hard for immediate credit card commitments that prospects feel badgered.
+          </p>
+          <div class="bg-white border border-slate-200 rounded-lg p-3 text-xs italic text-slate-500 mb-2">
+            "It almost sounds like a bill collector. Why are you grilling me? You want me to pay money, but you're grilling me like I'm in trouble."
+          </div>
+          <p class="text-xs text-emerald-800">
+            <strong>Mitigation Strategy:</strong> Re-anchor team training on an educational, consultative approach (the "TurboTax" model) that validates the headaches of DoD bureaucracy first.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="space-y-4 mb-10">
+      <div class="flex items-center gap-2 pb-1 border-b-2 border-blue-900">
+        <h2 class="text-xl font-extrabold text-blue-900 tracking-tight uppercase">4. Agent Performance Playbook & Talk Tracks</h2>
+      </div>
+      <p>
+        Key sales performers on the calling floor have developed highly effective tactical pathways. Scaling these techniques across the broader representative roster is crucial for repeatable GTM success.
+      </p>
+
+      <!-- Agent Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="bg-slate-900 text-white">
+              <th class="p-3 font-bold border border-slate-800 rounded-tl-lg">Agent & Title</th>
+              <th class="p-3 font-bold border border-slate-800">Core Technique</th>
+              <th class="p-3 font-bold border border-slate-800 rounded-tr-lg">Replicable Talk Track & Tactical Approach</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="p-3 border border-slate-200 align-top">
+                <span class="font-bold text-slate-900 block text-sm">Brandon Vargas</span>
+                <span class="text-[10px] text-slate-500 font-semibold uppercase">Top Performer</span>
+              </td>
+              <td class="p-3 border border-slate-200 align-top font-semibold text-blue-700">Objection Handling & Trust Building</td>
+              <td class="p-3 border border-slate-200 text-slate-600 align-top">
+                Acknowledges DoD rules are complex to disarm prospect defensiveness.<br>
+                <div class="mt-2 text-xs italic text-slate-500 bg-slate-50 p-2.5 rounded border border-slate-100">
+                  "It is really honestly a hassle... the DoD has done their best to make this as complicated as possible... that's why we come in because at SecurityMetrics, we're a certified RPO."
+                </div>
+              </td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="p-3 border border-slate-200 align-top">
+                <span class="font-bold text-slate-900 block text-sm">Evan</span>
+                <span class="text-[10px] text-slate-500 font-semibold uppercase">Consultative Expert</span>
+              </td>
+              <td class="p-3 border border-slate-200 align-top font-semibold text-blue-700">Educational Scoping</td>
+              <td class="p-3 border border-slate-200 text-slate-600 align-top">
+                Outlines flexible compliance paths depending on business size and baseline metrics.<br>
+                <div class="mt-2 text-xs italic text-slate-500 bg-white p-2.5 rounded border border-slate-100">
+                  "If you spend an hour a day, if you spend an hour a week, right? Ultimately, it depends on what you currently have with your business."
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-3 border border-slate-200 align-top">
+                <span class="font-bold text-slate-900 block text-sm">Jordan</span>
+                <span class="text-[10px] text-slate-500 font-semibold uppercase">Gap Specialist</span>
+              </td>
+              <td class="p-3 border border-slate-200 align-top font-semibold text-blue-700">Solution-Focused Closures</td>
+              <td class="p-3 border border-slate-200 text-slate-600 align-top">
+                Quickly isolates scope reduction strategies to lower prospect consulting costs.<br>
+                <div class="mt-2 text-xs italic text-slate-500 bg-slate-50 p-2.5 rounded border border-slate-100">
+                  "Let's look at a customized block of consulting hours to conduct a Gap Analysis first, then we can review scope reduction strategies to save you money."
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section class="space-y-4 page-break">
+      <div class="flex items-center gap-2 pb-1 border-b-2 border-blue-900">
+        <h2 class="text-xl font-extrabold text-blue-900 tracking-tight uppercase">5. Go-to-Market Implementation Roadmap</h2>
+      </div>
+      <p>
+        To execute the CMMC program effectively, the sales enablement and operations teams should implement the following multi-track roadmap. <span class="no-print text-blue-600 font-medium">(Interactive preview: Click tasks to check them off!)</span>
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+        <!-- Track A -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-slate-900 border-b border-slate-200 pb-2 text-xs uppercase tracking-wider text-blue-700">Track A: Program & Ops</h4>
+          <div class="space-y-2">
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Develop simplified qualification tools & visual aids</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Create campaign materials focused on November 2026 Deadline</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Build reference library of anonymized case studies</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Standardize Level 1 & Level 2 SOW templates</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Upgrade calling-floor VoIP setups to fix headset audio drops</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Track B -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-slate-900 border-b border-slate-200 pb-2 text-xs uppercase tracking-wider text-purple-700">Track B: Agent Training</h4>
+          <div class="space-y-2">
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Launch mandatory internal CMMC certification</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Conduct weekly agent call-review workshops</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Standardize educational transition closing script</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Draft gatekeeper and legacy vendor playbooks</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Train agents on enclave architectures vs. enterprise audits</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Track C -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-slate-900 border-b border-slate-200 pb-2 text-xs uppercase tracking-wider text-emerald-700">Track C: Assets & Tools</h4>
+          <div class="space-y-2">
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Deploy 1-page visual data flow and scoping maps</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Create competitor pricing comparison sheets</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Develop level-specific email follow-up templates</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Construct a central internal CMMC FAQ wiki</span>
+            </label>
+            <label class="flex items-start gap-2.5 text-xs text-slate-600 select-none cursor-pointer">
+              <input type="checkbox" class="mt-0.5 rounded text-blue-600 focus:ring-blue-500 h-4 w-4 shrink-0">
+              <span>Implement automated call-score tone coaching</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document Footer -->
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-xs text-slate-400">
+      <p>© 2026 SecurityMetrics, Inc. All rights reserved. • Internal GTM Performance Use Only</p>
+    </footer>
+
+  </article>
+
+</body>
+</html>
